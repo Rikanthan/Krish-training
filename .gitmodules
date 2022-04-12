@@ -1,0 +1,3 @@
+[submodule "microservice/practice"]
+	path = microservice/practice
+	url = https://github.com/Rikanthan/Krish-training
