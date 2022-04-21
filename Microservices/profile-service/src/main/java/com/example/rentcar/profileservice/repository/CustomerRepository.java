@@ -2,5 +2,5 @@ package com.example.rentcar.profileservice.repository;
 
 import com.example.rentcar.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
-public interface CustomerRepository extends JpaRepositoriesAutoConfiguration<Customer,Integer> {
+public interface CustomerRepository extends JpaRepository<Customer,Integer> {
 }
