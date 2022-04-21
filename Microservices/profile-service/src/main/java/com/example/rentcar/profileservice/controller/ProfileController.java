@@ -13,6 +13,7 @@ public class ProfileController {
     CustomerService customerService;
 
     @RequestMapping(value = "/profile", method = RequestMethod.POST)
+    PreAuthorize("hasAuthority('create_profile')")
     public Customer save(@RequestBody Customer customer)
     {
         return customerService.save(customer);
@@ -25,6 +26,7 @@ public class ProfileController {
     }
 
     @RequestMapping(value = "/profiles", method = RequestMethod.GET)
+    @PreAuthorize("hasRole('ROLE_operator')")
     public List<Customer> fetch()
     {
         return customerService.fetchById(profileId);
