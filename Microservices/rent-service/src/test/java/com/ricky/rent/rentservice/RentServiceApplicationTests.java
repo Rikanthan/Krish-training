@@ -1,10 +1,10 @@
-package com.rentcar.rentprocess;
+package com.ricky.rent.rentservice;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RentprocessApplicationTests {
+class RentServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
