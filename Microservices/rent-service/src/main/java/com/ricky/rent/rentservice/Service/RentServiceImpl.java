@@ -7,6 +7,7 @@ import com.ricky.rent.rentservice.Repository.RentRepository;
 import com.ricky.rent.rentservice.model.DetailResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
@@ -22,6 +23,7 @@ public class RentServiceImpl implements RentService{
     RestTemplate restTemplate;
 
     @Bean
+    @LoadBalanced
     RestTemplate getRestTemplate(RestTemplateBuilder builder)
     {
         return builder.build();
@@ -55,11 +57,11 @@ public class RentServiceImpl implements RentService{
         return null;
     }
     private Customer getCustomer(int customerId){
-        Customer customer = restTemplate.getForObject("http://localhost:8080/services/customers/",
+        Customer customer = restTemplate.getForObject("http://customer/services/customers/",
                 Customer.class,customerId);
         return customer;
     }
     private Vehicle getVehicle(int vehicleId){
-        return restTemplate.getForObject("http://localhost:9191/services/vehicles/",Vehicle.class,vehicleId);
+        return restTemplate.getForObject("http://vehicle/services/vehicles/",Vehicle.class,vehicleId);
     }
 }

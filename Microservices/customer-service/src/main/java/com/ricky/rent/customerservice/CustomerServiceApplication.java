@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
-@EntityScan(basePackages = "com.ricky.rentmodel.vehicle")
+@EntityScan(basePackages = "com.ricky.rentmodel")
 @EnableEurekaClient
 public class CustomerServiceApplication {
 
