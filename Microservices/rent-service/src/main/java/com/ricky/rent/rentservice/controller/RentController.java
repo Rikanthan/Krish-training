@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+
 @RestController
 @RequestMapping("/services/rents")
 public class RentController {
@@ -20,16 +22,13 @@ public class RentController {
     }
 
     @GetMapping(value = "/{id}")
-    public Response getRent(@PathVariable int id, @RequestParam(required = false) String type) {
+    public Response getRent(@PathVariable int id, @RequestParam(required = false) String type) throws ExecutionException, InterruptedException{
 
         if(type==null){
             return  new SimpleResponse(rentService.findById(id));
         }else{
             return  rentService.findDetailsResponse(id);
         }
-
-
-
     }
 
     @GetMapping
