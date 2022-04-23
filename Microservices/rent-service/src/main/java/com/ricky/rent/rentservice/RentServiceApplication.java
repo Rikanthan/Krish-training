@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
 @EntityScan(basePackages = "com.ricky.rent.rentmodel.rent")
+
 public class RentServiceApplication {
 
 	public static void main(String[] args) {
