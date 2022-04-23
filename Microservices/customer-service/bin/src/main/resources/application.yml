@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/rentcloud_vehicle?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/rentcloud_customer?createDatabaseIfNotExist=true
     username: root
     password:
     driver-class-name: com.mysql.jdbc.Driver
@@ -9,4 +9,8 @@ spring:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
       ddl-auto: none
-
+    # properties:
+    #  hibernate:
+    #   dialect: org.hibernate.dialect.MySQL55Dialect
+  application:
+    name: customer

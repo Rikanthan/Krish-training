@@ -1,6 +1,6 @@
 spring:
   application:
-    name: rent
+    name: vehicle
 server:
   port: 0
 eureka:
